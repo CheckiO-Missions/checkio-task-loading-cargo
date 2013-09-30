@@ -2,8 +2,8 @@
 
 /*Common*/
 
-.animation-content,
-.animation-content .x-panel-body{
+.animation_results,
+.animation_results .x-panel-body{
     background-color: #dfe8f7;
 }
 
@@ -116,15 +116,49 @@
     font-family: verdana;
 }
 
-.tryit-content .tool td{
+.tryit-content .tryit-text {
     text-align: center;
-    vertical-align: top;
-    padding: 3px;
+    font-size:14px;
+    padding-right: 5px;
+    color: #294270;
 }
 
-/*it for firefox*/
-.tryit-content .tool tr:first-child td:last-child {
-    height: 20%;
+.tryit-content .history{
+    padding-top: 5px;
+}
+
+.tryit-content .tool .input-test {
+    padding-top: 10px;
+    width: 143px;
+    height: 63px;
+    color: #294270;
+    font-weight: bold;
+    /*float: left;*/
+    display: inline;
+}
+
+
+.tryit-content .tool .input-test * {
+    margin-top: 5px;
+}
+
+.tryit-content .tool .input-test label.input-label {
+    /*float: left;*/
+    display: inline-block;
+    border: none;
+    height: 20px;
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+.tryit-content .tool .input-test input.input-text {
+    /*float: left;*/
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 150px;
+    font-size: 15px;
 }
 
 .tryit-content .checkio-result{
