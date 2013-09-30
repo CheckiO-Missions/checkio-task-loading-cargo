@@ -77,20 +77,81 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             }
             //Dont change the code before it
 
-            //Your code here about test explanation animation
-            //$content.find(".explanation").html("Something text for example");
-            //
-            //
-            //
-            //
-            //
+            var max_weight = Math.max.apply(Math, checkioInput);
+            var min_weight = Math.min.apply(Math, checkioInput);
+            var diff_weight = max_weight - min_weight;
+            if (diff_weight === 0) {
+                min_weight = min_weight / 2;
+                diff_weight = max_weight;
+            }
+
+            var left_part = data.ext["explanation"][0];
+            var right_part = data.ext["explanation"][1];
+            var diff_part = rightResult;
+
+            var $explanation = $content.find(".explanation");
+            $explanation.find("#diff-part").html(diff_part);
+
+            var $left_numbers = $explanation.find(".left-part").find(".numbers");
+            var $right_numbers = $explanation.find(".right-part").find(".numbers");
+
+            var weight_list_create = function(part, $part_numbers) {
+                for (i in part){
+                    var sp = $("<span>");
+                    sp.text(part[i] + '  ');
+                    sp.css("font-size", ((((part[i] - min_weight) / diff_weight) * 10) + 12));
+                    $part_numbers.append(sp);
+                }
+            };
+
+            weight_list_create(left_part, $left_numbers);
+            weight_list_create(right_part, $right_numbers);
 
 
             this_e.setAnimationHeight($content.height() + 60);
 
         });
 
-       
+        var $tryit;
+
+        ext.set_console_process_ret(function(this_e, ret){
+            $tryit.find('.checkio-result-in').html("Checkio return: " + ret);
+        });
+
+        ext.set_generate_animation_panel(function(this_e){
+
+            $tryit = $(this_e.setHtmlTryIt(ext.get_template('tryit')));
+            var weights = [];
+
+            $tryit.find('.input-text').focus();
+
+            $tryit.find("form .bn-reset").click(function(e){
+                weights = [];
+                $tryit.find(".batteries").html(weights.join(", "));
+                $tryit.find(".input-text").val('');
+            });
+
+//            $tryit.find('form').submit(function(e){
+//                console.log("IN FORM");
+//                return false;
+//            });
+
+//            $tryit.find("form .bn-check").click(function(e){
+            $tryit.find('form').submit(function(e){
+                var new_weights = $tryit.find(".input-text").val().match(/(\d+)/g);
+                if (new_weights !== null) {
+                    for (var i=0; i < new_weights.length; i++){
+                        weights.push(parseInt(new_weights[i]));
+                    }
+                }
+                $tryit.find(".batteries").html(weights.join(", "));
+                $tryit.find(".input-text").val('');
+                this_e.sendToConsoleCheckiO(weights);
+                e.stopPropagation();
+                return false;
+             });
+
+        });
 
         var colorOrange4 = "#F0801A";
         var colorOrange3 = "#FA8F00";

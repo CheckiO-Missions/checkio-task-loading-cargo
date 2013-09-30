@@ -1,7 +1,22 @@
 <script type="text/template" id="template_animation">
     <div class="animation-content center-exp">
         <div class="output"></div>
-        <div class="explanation center-exp"></div>
+        <div class="explanation center-exp">
+            <div class="weights">
+
+                <div class="left-part">
+                    <div class="numbers"></div>
+                    <div class="bottom"></div>
+                </div>
+                <div class="middle-part"></div>
+                <div class="right-part">
+                    <div class="numbers">&nbsp;</div>
+                    <div class="bottom"></div>
+                </div>
+            </div>
+
+            <div class="robot-image"><span id="diff-part"></span></div>
+        </div>
         <div class="answer"></div>
         <div class="call"></div>
     </div>
@@ -9,22 +24,21 @@
 
 <script type="text/template" id="template_tryit">
     <div class="tryit-content center-exp">
-        <table class="tool">
-            <tr>
-                <td>
-                    <input type="text" value="test">
-                </td>
-                <td>
-                    <button class="bn-check btn">Action</button>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="checkio-result">
-                    Result:<br>
-                    <span class="checkio-result-in">&nbsp;</span>
-                </td>
-            </tr>
+        <div class="tool">
+            <div class="tryit-text">Enter weights as numbers separated by whitespaces</div>
+            <form class="input-test">
+                <div class="center-exp">
+                    <label class="input-label">Weights:</label>
+                    <input type="text" class="input-text uneditable-input"/>
+                </div>
+                <div class="center-exp">
+                    <button type="submit" class="bn-check btn">Add&Check</button>
+                    <button type="button" class="bn-reset btn">Reset</button>
+                </div>
 
-        </table>
+            </form>
+        </div>
+        <div class="history tryit-text">Batteries weights: [<span class="batteries"></span>]</div>
+        <div class="checkio-result"><span class="checkio-result-in"></span></div>
     </div>
 </script>

@@ -2,8 +2,8 @@
 
 /*Common*/
 
-.animation_results,
-.animation_results .x-panel-body{
+.animation-content,
+.animation-content .x-panel-body{
     background-color: #dfe8f7;
 }
 
@@ -55,6 +55,60 @@
 .animation-content .error{
     color: #de0202;
     border-color: #de0202;
+}
+
+.animation-content .weights {
+    margin-left: 65px;
+    width: 250px;
+    margin-bottom: -25px;
+}
+
+.animation-content .weights .numbers {
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    width: 90px;
+
+}
+.animation-content .weights .right-part {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+
+.animation-content .weights .left-part {
+    display: inline-block;
+    vertical-align: bottom;
+}
+.animation-content .weights .middle-part {
+    width: 25px;
+    display: inline-block;
+    /*margin-bottom: -50px;*/
+}
+
+.animation-content .bottom {
+    width: 90px;
+    margin-top: -8px;
+    border-bottom: solid black 2px;
+    height: 10px;
+    border-right: solid black 2px;
+    border-left: solid black 2px;
+}
+
+.animation-content #diff-part {
+    margin-left: 98px;
+    margin-top: 35px;
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
+    width: 45px;
+}
+.animation-content .robot-image {
+    background-image: url("/media/files/tasks/robots/batteries_loading_v1_300.png");
+    width: 300px;
+    height: 150px;
+    margin-left: 50px;;
+    margin-bottom: -10px;
 }
 
 .tryit-content {
