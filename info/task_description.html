@@ -20,12 +20,14 @@
     <p>"Okay, so I have to figure out how many batteries I should hold in each hand to prevent them from breaking when
         they inevitably fall to the ground. Got it."</p>
 </div>
-<p>You have been given a list of integer weights. You need to help Stephen distribute these weights into two sets, such that the difference
-    between the total weight of each set is as low as possible.</p>
+<p>
+    You have been given a list of integer weights.
+    You should to help Stephen distribute these weights into two sets,
+    such that the difference between the total weight of each set is as low as possible.</p>
 
-<p><strong>Input data:</strong> A list of the weights.</p>
+<p><strong>Input data:</strong> A list of the weights as a list of integers.</p>
 
-<p><strong>Output data:</strong> A number representing the lowest possible weight difference.</p>
+<p><strong>Output data:</strong> The number representing the lowest possible weight difference as a positive integer.</p>
 
 <div class="for_info_only">
 <p><strong>Example:</strong></p>
@@ -83,7 +85,7 @@ checkio([1, 1, 1, 3]) == 0
 </div>
 
 <script type="text/javascript">
-    var $hintLink = $("#task-hints li a");
+    var $hintLink = $("#task-hints").find("li a");
     $hintLink.click(function(e){
         e.preventDefault();
         var $this = $(this);
@@ -95,5 +97,14 @@ checkio([1, 1, 1, 3]) == 0
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    Optimisation software.
+    This is an combinatorial optimization version of the Partition problem.
+    The combinatorial optimization has the wide usage and
+    you meet it when look at automatic developed schedules or route calculating.
+</p>
+
+
+
+<p>
+    <strong>Precondition:</strong> 0 < |weights| &le; 10<br>
+    &forall; x ∈ weights : 0 &lt; x &lt; 100
 </p>
