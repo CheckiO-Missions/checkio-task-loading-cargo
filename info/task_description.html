@@ -62,7 +62,7 @@ checkio([1, 1, 1, 3]) == 0
     <div id="task-hints">
         <ul>
             <li>
-                <a href="javascript: void(0)">Show hint 1</a>
+                <a class="hint-link" href="">Show hint 1</a>
                 <span class="hint">
                     The simplest way (but it's slow) is to check all combinations of distributions.
                 </span>
@@ -85,7 +85,7 @@ checkio([1, 1, 1, 3]) == 0
 </div>
 
 <script type="text/javascript">
-    var $hintLink = $("#task-hints").find("li a");
+    var $hintLink = $("#task-hints li a.hint-link");
     $hintLink.click(function(e){
         e.preventDefault();
         var $this = $(this);
