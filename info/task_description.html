@@ -27,10 +27,11 @@
 
 <p><strong>Input data:</strong> A list of the weights as a list of integers.</p>
 
-<p><strong>Output data:</strong> The number representing the lowest possible weight difference as a positive integer.</p>
+<p><strong>Output data:</strong> The number representing the lowest possible weight difference as a positive integer.
+</p>
 
 <div class="for_info_only">
-<p><strong>Example:</strong></p>
+    <p><strong>Example:</strong></p>
 <pre class="brush: python">checkio([10,10]) == 0
 checkio([10]) == 10
 checkio([5, 8, 13, 27, 14]) == 3
@@ -41,70 +42,17 @@ checkio([1, 1, 1, 3]) == 0
 </div>
 
 
-
-<style>
-    #task-hints .hint {
-        display: none;
-    }
-
-    #task-hints ul {
-        margin-top: 10px;
-    }
-
-    #task-hints ul li {
-        text-indent: 20px;
-        font-style: italic;
-    }
-</style>
-
-<div>
-    <strong>Hints:</strong> It can help, if you get stuck<br>
-    <div id="task-hints">
-        <ul>
-            <li>
-                <a class="hint-link" href="">Show hint 1</a>
-                <span class="hint">
-                    The simplest way (but it's slow) is to check all combinations of distributions.
-                </span>
-            </li>
-            <li>
-                <a class="hint-link" href="javascript: void(0)">Show hint 2</a>
-                <span class="hint">
-                    Python already has the tools for combinatorics — import itertools.
-                </span>
-            </li>
-            <li>
-                <a class="hint-link" href="">Show hint 3</a>
-                <span class="hint">
-                    Do you want an effective algorithm? Take a look at <a href="http://en.wikipedia.org/wiki/Partition_problem">Partition problems</a>.
-                </span>
-            </li>
-
-        </ul>
-    </div>
-</div>
-
-<script type="text/javascript">
-    var $hintLink = $("#task-hints li a.hint-link");
-    $hintLink.click(function(e){
-        e.preventDefault();
-        var $this = $(this);
-        $this.hide();
-        $this.parent().find(".hint").slideDown();
-        return false;
-    })
-</script>
-
 <p class="for_info_only">
     <strong>How it is used: </strong>
     This is a combinatorial optimization version of the partition problem.
-    The combinatorial optimization has wide usage and you often see it when you look at automated schedules or route calculating.
+    The combinatorial optimization has wide usage and you often see it when you look at automated schedules or route
+    calculating.
 
 </p>
 
 
-
 <p>
-    <strong>Precondition:</strong> 0 < |weights| &le; 10<br>
-    &forall; x ∈ weights : 0 &lt; x &lt; 100
+    <strong>Precondition:</strong><br>
+    0 &lt; len(weights) &le; 10<br>
+    all(0 &lt; x &lt; 100 for x in weights)
 </p>
