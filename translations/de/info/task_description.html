@@ -1,0 +1,58 @@
+<div class="story"
+     style="padding-left:220px; background-image:url(/media/files/tasks/robots/batteries_loading_v1_300.png); background-position:-24px -29px;">
+    <p>"Hören Sie, Stephen, hier ist eine Liste mit den Gegenständen, die auf das Schiff geladen werden müssen. Wir werden eine Menge Batterien brauchen
+        batterien." Nikola reichte ihm einen Notizblock.</p>
+
+    <p>"Was bedeuten die Zahlen neben den Gegenständen?"</p>
+
+    <p>"Das ist das Gewicht der einzelnen Artikel."</p>
+
+    <p>"Äh, warum?"</p>
+
+    <p>"Damit Sie sehen können, wie sehr Ihre Sammelkarten und Ihre Comic-Sammlung uns während des Fluges belasten werden Rang
+        Sofias Stimme aus der Telefonleitung.</p>
+
+    <p>"Wovon redet sie?", fragte Nikola. "Oh, schon gut, das war Sarkasmus. Es ist wichtig, weil Ihr
+        es ist wichtig, weil Ihr Stabilisierungsgurt kaputt ist und wir im Moment keine Möglichkeit haben, einen neuen zu finden. Deshalb müssen Sie, wenn Sie
+        wenn Sie die Dinge auf der Liste tragen, müssen Sie das Gewicht umverteilen, um das minimale Gewicht in jedem Arm zu haben
+        jedem Arm."</p>
+
+    <p>"Okay, ich muss also herausfinden, wie viele Batterien ich in jeder Hand halten soll, damit sie nicht kaputt gehen, wenn sie
+        sie unweigerlich auf den Boden fallen. Ich hab's."</p>
+</div>
+<p>
+    Sie haben eine Liste mit ganzzahligen Gewichten erhalten.
+    Sie sollen Stephen helfen, diese Gewichte in zwei Gruppen aufzuteilen,
+    und zwar so, dass die Differenz zwischen dem Gesamtgewicht der beiden Gruppen so gering wie möglich ist.</p>
+
+<p><strong>Eingabedaten:</strong> Eine Liste der Gewichte als Liste von Ganzzahlen.</p>
+
+<p><strong>Ausgabedaten:</strong> Die Zahl, die die kleinstmögliche Gewichtsdifferenz darstellt, als positive Ganzzahl.
+</p>
+
+<div class="for_info_only">
+    <p><strong>Beispiel:</strong></p>
+<pre class="brush: python">checkio([10,10]) == 0
+checkio([10]) == 10
+checkio([5, 8, 13, 27, 14]) == 3
+checkio([5,5,6,5]) == 1
+checkio([12, 30, 30, 32, 42, 49]) == 9
+checkio([1, 1, 1, 3]) == 0
+</pre>
+</div>
+
+
+<p class="for_info_only">
+   <strong>Wie es verwendet wird: </strong>
+    Dies ist eine kombinatorische Optimierungsversion des Partitionsproblems.
+    Die kombinatorische Optimierung ist weit verbreitet und Sie sehen sie oft, wenn Sie sich mit automatisierten Zeitplänen oder Routen
+    berechnung.
+
+</p>
+
+
+<p>
+   <strong>Vorbedingung:</strong><br>
+    0 &lt; len(gewichte) &le; 10<br>
+    all(0 &lt; x &lt; 100 für x in Gewichte)
+</p>
